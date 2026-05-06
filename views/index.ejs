@@ -4,6 +4,28 @@
 
 <p>Discover and share your favorite books and reviews.</p>
 
+<div class="sort-buttons">
+
+    <a href="/?sort=rating">
+        <button class="sort-btn">
+            Sort by Rating
+        </button>
+    </a>
+
+    <a href="/?sort=recent">
+        <button class="sort-btn">
+            Sort by Recent
+        </button>
+    </a>
+
+    <a href="/">
+        <button class="sort-btn">
+            Show All
+        </button>
+    </a>
+
+</div>
+
 <a href="/add">
     <button class="add-btn">
         Add Book
@@ -68,6 +90,29 @@
 </div>
 
 <style>
+    .sort-buttons{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    margin:25px 0;
+}
+
+.sort-btn{
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    color:white;
+    border:none;
+    padding:12px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:bold;
+    transition:0.3s ease;
+}
+
+.sort-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
     /* ADD BUTTON */
 
 .add-btn{
