@@ -1,0 +1,114 @@
+<%- include('partials/header') %>
+
+<div class="form-container">
+
+    <h1>Edit Book</h1>
+
+    <form action="/update/<%= book.id %>" method="POST">
+
+        <input 
+            type="text"
+            name="title"
+            value="<%= book.title %>"
+            required
+        >
+
+        <input 
+            type="text"
+            name="author"
+            value="<%= book.author %>"
+            required
+        >
+
+        <input 
+            type="text"
+            name="isbn"
+            value="<%= book.isbn %>"
+            required
+        >
+
+        <input 
+            type="number"
+            name="rating"
+            value="<%= book.rating %>"
+            min="1"
+            max="5"
+            required
+        >
+
+        <textarea 
+            name="review"
+            rows="5"
+        ><%= book.review %></textarea>
+
+        <input 
+            type="date"
+            name="date_read"
+            value="<%= book.date_read %>"
+        >
+
+        <button type="submit" class="submit-btn">
+            Update Book
+        </button>
+
+    </form>
+
+</div>
+
+<style>
+
+body{
+    background:#f4f4f4;
+    font-family:Arial, sans-serif;
+}
+
+.form-container{
+    width:500px;
+    margin:50px auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input,
+textarea{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+textarea{
+    resize:none;
+}
+
+.submit-btn{
+    background:#4CAF50;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.submit-btn:hover{
+    background:#388E3C;
+}
+
+</style>
+
+<%- include('partials/footer') %>
